@@ -792,7 +792,7 @@ moves_loop: // When in check and at SpNode search starts from here
 
     singularExtensionNode =   !RootNode
                            && !SpNode
-                           &&  depth >= 8 * ONE_PLY
+                           &&  depth >= 6 * ONE_PLY
                            &&  ttMove != MOVE_NONE
                        /*  &&  ttValue != VALUE_NONE Already implicit in the next condition */
                            &&  abs(ttValue) < VALUE_KNOWN_WIN

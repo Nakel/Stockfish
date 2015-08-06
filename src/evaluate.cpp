@@ -93,7 +93,7 @@ namespace {
   enum { Mobility, PawnStructure, PassedPawns, Space, KingSafety };
 
   const struct Weight { int mg, eg; } Weights[] = {
-    {289, 344}, {233, 201}, {221, 273}, {46, 0}, {322, 0}
+    {282, 335}, {233, 201}, {221, 273}, {46, 0}, {332, 0}
   };
 
   Score operator*(Score s, const Weight& w) {
@@ -703,8 +703,8 @@ namespace {
 
     // Pawns blocked or on ranks 2 and 3. Will be excluded from the mobility area
     Bitboard blockedPawns[] = {
-      pos.pieces(WHITE, PAWN) & (shift_bb<DELTA_S>(pos.pieces()) | Rank2BB | Rank3BB),
-      pos.pieces(BLACK, PAWN) & (shift_bb<DELTA_N>(pos.pieces()) | Rank7BB | Rank6BB)
+      pos.pieces(WHITE, PAWN) & (shift_bb<DELTA_S>(pos.pieces(PAWN)) | Rank2BB | Rank3BB),
+      pos.pieces(BLACK, PAWN) & (shift_bb<DELTA_N>(pos.pieces(PAWN)) | Rank7BB | Rank6BB)
     };
 
     // Do not include in mobility squares protected by enemy pawns, or occupied

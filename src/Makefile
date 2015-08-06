@@ -84,6 +84,7 @@ ifeq ($(ARCH),x86-32)
 	arch = i386
 	prefetch = yes
 	sse = yes
+	popcnt = yes
 endif
 
 ifeq ($(ARCH),general-64)
